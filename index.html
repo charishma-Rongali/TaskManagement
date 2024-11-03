@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskManagement</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <div id="topDiv">
+        <div id="imageDiv">
+          <img src="taskmanagement1.webp" alt="taskManagement" />
+        </div>
+        <div id="userFormDiv">
+          <form id="userForm">
+            <label for="taskTitle">Title :</label>
+            <input id="taskTitle" type="text" name="taskTitle" />
+            <br />
+            <label for="taskInfo">Description :</label>
+            <textarea type="textarea" id="taskInfo" name="taskInfo"></textarea>
+            <br />
+            <label for="taskDueDate">DueDate : </label>
+            <input type="date" id="taskDueDate" name="taskDueDate" />
+            <br />
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority" name="taskPriority">
+              <option>EASY</option>
+              <option>MEDIUM</option>
+              <option>HARD</option>
+            </select>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div id="filterDiv" style="text-align: center; margin: 20px">
+        <select id="priorityFilter">
+          <option value="all">All Priorities</option>
+          <option value="EASY">Easy</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="HARD">Hard</option>
+        </select>
+
+        <select id="dateFilter">
+          <option value="all">All Dates</option>
+          <option value="today">Due Today</option>
+          <option value="week">Next 7 Days</option>
+        </select>
+
+        <select id="statusFilter">
+          <option value="all">All Tasks</option>
+          <option value="pending">Pending Tasks</option>
+          <option value="completed">Completed Tasks</option>
+        </select>
+      </div>
+      <div>
+        <h1 style="text-align: center">Pending Tasks</h1>
+        <div id="taskContainerPending"></div>
+      </div>
+      <div>
+        <h1 style="text-align: center">Completed Tasks</h1>
+        <div id="taskContainerCompleted"></div>
+      </div>
+    </div>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="taskLists.js"></script>
+    <script type="module" src="filter.js"></script>
+  </body>
+</html>
